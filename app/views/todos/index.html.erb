@@ -1,0 +1,12 @@
+
+<!-- remote true will make an ajax request -->
+<%= form_for Todo.new, remote:true do |f| %>
+ <%= f.text_field :title %> 
+ <%= f.submit "Add" %>
+<% end %>
+
+<ul>
+ <% @todos.each do |t| %>
+  <li id="todo-<%= t.id %>"><%= t.title %> <%= button_to "Delete", todo_path(t), method: "delete", remote:true %></li> 
+ <% end %>
+</ul>
