@@ -1,0 +1,4 @@
+<li id="todo-<%= todo.id %>">
+  <span data-target="#edit_todo_<%= todo.id %>"><%= todo.title %></span>
+  <%= link_to "x", todo_path(todo), method: "delete", remote:true, class:"delete-link", data: { confirm: 'Are you sure?' } %>
+</li> 

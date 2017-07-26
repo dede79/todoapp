@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+ul {
+  display:inline-block;
+  
+}
+
+form.button_to {
+  display: inline;
+  margin-left: 20px;
+
+}
+
+form{
+  text-align:center;
+}
+
+.edit_todo {
+  display:none;
+}

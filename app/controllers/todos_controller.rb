@@ -9,15 +9,15 @@ class TodosController < ApplicationController
   end
   
   def update
-  respond_to do |format|
-    if @todo.update(todo_params)
-      format.json { render :show, status: :ok, location: @todo }
-    end
+    @todo = Todo.find(params[:id])
+    @todo.update!(todo_params)
   end
-end
 
   def destroy
-    Todo.find(params[:id]).destroy!
+    @todo = Todo.find(params[:id]).destroy!
+    respond_to do |format|
+      format.js
+    end
   end
   
   

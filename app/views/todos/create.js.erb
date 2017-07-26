@@ -1,5 +1,6 @@
 const ul = document.querySelector("ul")
 const li = document.createElement("li")
-li.textContent = "<%= @todo.title %>"
 
 ul.insertBefore(li, ul.firstChild)
+//outerHTML is the tag definition
+li.outerHTML = "<%= j render "todo", {todo: @todo} %>"

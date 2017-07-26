@@ -6,7 +6,8 @@
 <% end %>
 
 <ul>
- <% @todos.each do |t| %>
-  <li id="todo-<%= t.id %>"><%= t.title %> <%= button_to "Delete", todo_path(t), method: "delete", remote:true %></li> 
+  <% @todos.each do |t| %>
+   <%= render "todo", {todo: t} %>
+  <%= render "edit", {todo: t} %>
  <% end %>
 </ul>
